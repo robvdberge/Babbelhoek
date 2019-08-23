@@ -1,17 +1,45 @@
+/*--------------misc------------------*/
 h3{
-    font-size: 22px;
+    margin-bottom: 5px;
+}
+a{
+    color: #5c5b69;
+}
+ul{
+    padding: 0;
+    margin: 0;
+    list-style: none;
 }
 li{
     list-style: none;
 }
-
-.avatar{
-    width: 100px;
-    margin: 10px 0;
+hr{
+    margin: 10px 0 15px 0;
 }
-.topic-content{
-    width: 40vw;
+/*-----------------sections------------*/
+body{
+    padding-top: 70px;
+    background-color: #f0f0f0;
+    font-size: 15px;
 }
+main{
+    background-color: transparent;
+}
+/*----------------nav------------------*/
+.navbar{
+    height: 40px !important;
+    background-color: #5c5b69 ;
+    border: 0;
+    margin-bottom: 30px;
+}
+.navbar>li>a, .nav-link{
+    color: #fff !important;
+    padding: 10px 10px 10px 0;
+}
+.navbar>li>a:hover, .nav-link:hover{
+    color: #ccf !important;
+}
+/*---------------index------------------*/
 .bd-placeholder-img {
     font-size: 1.125rem;
     text-anchor: middle;
@@ -26,3 +54,85 @@ li{
       font-size: 3.5rem;
     }
 }
+.block{
+    background-color: #fff;
+    border-radius: 5px;
+    padding: 15px 20px;
+    margin-bottom: 20px;
+}
+.main-col{
+    overflow: auto;
+}
+.main-col h1{
+    font-size: 22px;
+    margin: 5px 0 0 0;
+    padding: 0;
+}
+.main-col h4{
+    font-size: 16px;
+    margin: 5px 0 0 0;
+    padding: 0;
+}
+.sidebar .block h3{
+    margin:0;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eee;
+}
+/*-----------------main - topic -------------------*/
+.topic{
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    margin-bottom: 10px;
+    padding: 10px;
+}
+.topic-content{
+    width: 100%;
+}
+.avatar{
+    width: 100%;
+}
+/*---------------sidebar categories----------------*/
+.list-group-item.active, a.list-group-item.active:hover, a.list-group-item.active:focus{
+    background-color: #5c5b69;
+    border-radius: 0;
+    color: #fff;
+}
+.list-group-item{
+    border: 0;
+    text-decoration: none !important;
+}
+.list-group-item:hover{
+    background-color: #d4d3e2;
+    color: #5c5b69;
+}
+.list-group-item.active>.badge{
+    background-color: #fff;
+    color: #555;
+}
+/*---------------topic.php-------------------------*/
+#main-topic{
+    background: #f4f4f4;
+    padding: 10px;
+}
+.user-info{
+    border: 1px solid #ddd;
+    padding: 5px;
+    overflow: hidden;
+    font-size: 13px;
+}
+.user-info img{
+    display: block;
+    margin-bottom: 5px;
+}
+.user-info ul{
+    list-style: none;
+    margin: 10px 0 0 5px;
+}
+.user-info li{
+    line-height: 1.6em;
+}
+.btn-default:hover{
+    background-color: #dbdaf0 !important;
+}
+/*------------------create.php---------------------*/
+
+/*------------------register.php---------------------*/
