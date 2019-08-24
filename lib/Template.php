@@ -33,10 +33,12 @@ class Template
     {
         extract( $this->vars );
         chdir( dirname ($this->template));
+        
+        // start buffer
         ob_start();
-
         include basename($this->template);
-
-        return ob_get_clean();
+        
+        // clear buffer
+        return ob_get_clean(); 
     }
 }

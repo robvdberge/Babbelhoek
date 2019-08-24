@@ -44,3 +44,4 @@
                     <h4 class="float-right mt-3 text-muted"><em>Een simpel php Forum</em></h4>
                     <div class="clearfix"></div>
                     <hr>
+                    <?php displayMessage();?>
