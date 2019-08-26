@@ -2,6 +2,7 @@
 include 'core/init.php';
 // Open new Topic
 $topic = new Topic;
+$user = new User;
 
 // Get template
 $template = new Template('templates/frontpage.php');
@@ -10,7 +11,7 @@ $template = new Template('templates/frontpage.php');
 $template->titel            = 'Welkom op de BabbelHoek';
 $template->topics           = $topic->getAllTopics();
 $template->totalTopics      = $topic->getTotalTopics();
-$template->totalGebruikers  = $topic->getTotalGebruikers();
+$template->totalGebruikers  = $user->getTotalGebruikers();
 $template->totalCats        = $topic->getTotalCats();
 
 // Display the template

@@ -1,4 +1,6 @@
 <?php include 'includes/header.php';?>
+    <div><h4><?php echo $topic->inhoud;?></h4></div>
+    <hr>
     <ul id="topics">
         <?php if ($reacties): ?>
         <?php   foreach ( $reacties as $reactie): ?>
@@ -27,15 +29,19 @@
         <?php endif; ?>
     
     </ul>
-    <h3>Reply To Topic</h3>
-    <form role="form">				
-        <div class="form-group">
-            <textarea id="reply" rows="10" cols="80" class="form-control" name="reply"></textarea>
-            <script>CKEDITOR.replace( 'reply' );</script>
-        </div>
-        <button type="submit" class="btn btn-default">Verzend</button>
-    </form>
-    <h3>Forum statistieken</h3>
+    <?php if (isLoggedIn()): ?>
+        <h3>Reply To Topic</h3>
+        <form role="form" method="POST" action="topic.php?id=<?php echo $topicId;?>">				
+            <div class="form-group">
+                <textarea id="reply" rows="10" cols="80" class="form-control" name="reply"></textarea>
+                <script>CKEDITOR.replace( 'reply' );</script>
+            </div>
+            <button type="submit" class="btn btn-primary" name="do_reply">Verzend</button>
+        </form>
+    <?php else: ?>
+        <h4 class="text-center text-muted">Log in om te kunnen reageren</h4>
+    <?php endif; ?>
+    <h4>Forum statistieken</h4>
     <ul>
         <li>Totaal aantal gebruikers: <strong><?php echo $totalGebruikers;?></strong></li>
         <li>Totaal aantal Topics: <strong><?php echo $totalTopics;?></strong></li>

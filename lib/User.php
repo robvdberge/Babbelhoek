@@ -64,4 +64,46 @@ class User{
         redirect('register.php', 'Invalid File Type!', 'error');
         }
     }  
+
+    // Login function
+    public function login( $username, $pass )
+    {
+        $this->db->query("SELECT * FROM gebruikers WHERE gebruikersnaam = :username AND wachtwoord = :pass");
+        $this->db->bind( ':username', $username );
+        $this->db->bind( ':pass', $pass );
+
+        $row = $this->db->single();
+        // Check Row
+        if ( $this->db->rowCount() > 0 ){
+            $this->setUserData( $row );
+            return TRUE;
+        } else {
+            return FALSE;
+        }
+    }
+
+    // Sets db user data in $_SESSION 
+    private function setUserData( $db_data )
+    {
+        $_SESSION['is_ingelogd']    = TRUE;
+        $_SESSION['gebruikers_id']  = $db_data->id;
+        $_SESSION['gebruikersnaam'] = $db_data->gebruikersnaam;
+        $_SESSION['naam']           = $db_data->naam;
+    }
+
+    // Logout 
+    public function logout()
+    {   
+        unset($_SESSION['is_ingelogd']);
+        session_destroy();
+        return TRUE;
+    }
+
+    // Get total # users
+    public function getTotalGebruikers()
+    {
+        $this->db->query("SELECT * FROM gebruikers");
+        $this->db->resultset();
+        return $this->db->rowCount();
+    }
 }

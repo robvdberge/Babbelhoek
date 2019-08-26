@@ -8,6 +8,10 @@
     <link rel="stylesheet" href="templates/css/bootstrap.css">
     <!-- Custom styles for this template -->
     <link rel="stylesheet" href="templates/css/custom.css">
+    <script src="templates/js/bootstrap.js"></script>
+      <script>window.jQuery || document.write('<script src="templates/js/bootstrap.js"><\/script>')</script>
+      <script src="templates/js/bootstrap.js"></script>
+      <script src="templates/js/ckeditor/ckeditor.js"></script>
     <?php if ( !isset($titel) ){
       $titel = SITE_TITEL;
     }?>
@@ -21,15 +25,12 @@
 
   <div class="collapse navbar-collapse" id="navbarsExampleDefault">
     <ul class="navbar-nav ml-auto pr-5">
-      <li class="nav-item">
-        <a class="nav-link" href="index.php">Home</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="register.php">Maak Account</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="create.php">Maak Topic</a>
-      </li>
+      <li class="nav-item"><a class="nav-link" href="index.php">Home</a></li>
+      <?php if (!isLoggedIn()): ?>
+        <li class="nav-item"><a class="nav-link" href="register.php">Maak Account</a></li>
+      <?php else: ?>
+        <li class="nav-item"><a class="nav-link" href="create.php">Maak Topic</a></li>
+      <?php endif; ?>
       
     </ul>
   </div>

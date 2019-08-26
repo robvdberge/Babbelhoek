@@ -23,7 +23,7 @@ function redirect($page = FALSE, $message = NULL, $message_type = NULL)
     header('location: ' . $location );
     exit;
 }
-
+// Give a message (if is set)
 function displayMessage()
 {
     if ( !empty( $_SESSION['message'])){
@@ -44,4 +44,24 @@ function displayMessage()
     } else {
         echo '';
     }
+}
+
+// Check if logged in
+function isLoggedIn()
+{
+    if ( isset($_SESSION['is_ingelogd'] )){
+        return TRUE;
+    } else {
+        return FALSE;
+    }
+}
+
+// Get user data from DB
+function getUser()
+{
+    $userArray = array ();
+    $userArray['gebruikers_id'] = $_SESSION['gebruikers_id'];
+    $userArray['gebruikersnaam'] = $_SESSION['gebruikersnaam'];
+    $userArray['naam'] = $_SESSION['naam'];
+    return $userArray;
 }

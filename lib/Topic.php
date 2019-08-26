@@ -27,14 +27,6 @@ Class Topic
         return $result;
     }
 
-    // get total # of gebruikers
-    public function getTotalGebruikers()
-    {
-        $this->db->query("SELECT * FROM gebruikers");
-        $this->db->resultset();
-        return $this->db->rowCount();
-    }
-
     // get total # of topics
     public function getTotalTopics()
     {
@@ -109,5 +101,37 @@ Class Topic
         $this->db->bind(':user', $user);
         $result = $this->db->single();
         return $result;
+    }
+
+    public function create( $data )
+    {
+        $this->db->query("INSERT INTO topics(cat_id, gebruikers_id, titel, inhoud, laatste_login)
+                    VALUES (:cat_id, :gebruikers_id, :titel, :inhoud, :laatste_login)");
+        $this->db->bind(':cat_id', $data['cat_id']);
+        $this->db->bind(':gebruikers_id', $data['gebruikers_id']);
+        $this->db->bind(':titel', $data['titel']);
+        $this->db->bind(':inhoud', $data['inhoud']);
+        $this->db->bind(':laatste_login', $data['laatste_login']);
+
+        if ( $this->db->execute() ){
+            return TRUE;
+        } else {
+            return FALSE;
+        }
+    }
+
+    public function reply($data)
+    {
+        $this->db->query("INSERT INTO reacties(topic_id, gebruikers_id, inhoud)
+                                    VALUES (:topic_id, :gebruikers_id, :inhoud)");
+        $this->db->bind(':topic_id', $data['topic_id']);
+        $this->db->bind(':gebruikers_id', $data['gebruikers_id']);
+        $this->db->bind(':inhoud', $data['inhoud']);
+
+        if ( $this->db->execute() ){
+            return TRUE;
+        } else {
+            return FALSE;
+        }
     }
 }

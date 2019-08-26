@@ -16,7 +16,8 @@
                 <label>Herhaal Wachtwoord*</label> <input type="password" class="form-control" name="password2" placeholder="Voer nogmaals je wachtwoord in">
             </div>
         <div class="form-group">
-            <label>Upload Avatar</label><input type="file" name="avatar" class="mx-1">
+            <label>Upload Avatar</label><br>
+            <input type="file" name="avatar" class="mx-1">
             <p class="help-block"></p>
         </div>
         <div class="form-group">
