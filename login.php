@@ -1,5 +1,5 @@
 <?php
-include 'core/init.php';
+include $_SERVER['DOCUMENT_ROOT'] . '/projects/BabbelHoek/core/init.php';
 
 if ( isset($_POST['do_login'])){
     // get vars

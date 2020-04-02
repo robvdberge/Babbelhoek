@@ -1,4 +1,4 @@
-<?php include 'includes/header.php';?>
+<?php include BASE_URI . 'templates/includes/header.php';?>
     <form role="form" method="POST" action="create.php">
         <div class="form-group">
             <label>Topic Naam</label>
@@ -19,4 +19,4 @@
             </div>
         <button type="submit" class="btn btn-primary" name="do_create">Verzend</button>
     </form>
- <?php include 'includes/footer.php';?>
+ <?php include BASE_URI . 'templates/includes/footer.php';?>

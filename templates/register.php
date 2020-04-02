@@ -1,4 +1,4 @@
-<?php include 'includes/header.php';?>
+<?php include BASE_URI . 'templates/includes/header.php';?>
     <form role="form" enctype="multipart/form-data" method="post" action="register.php">
         <div class="form-group">
         <label>Naam*</label> <input type="text" class="form-control" name="name" placeholder="Voer je naam in">
@@ -26,4 +26,4 @@
             </div>
             <input name="register" type="submit" class="btn btn-primary mb-5" value="Register" />
         </form>
-<?php include 'includes/footer.php';?>
+<?php include BASE_URI . 'templates/includes/footer.php';?>

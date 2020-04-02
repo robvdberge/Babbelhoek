@@ -1,5 +1,5 @@
 <?php 
-include 'core/init.php';
+include $_SERVER['DOCUMENT_ROOT'] . '/projects/BabbelHoek/core/init.php';
 // Open new Topic
 $topic = new Topic;
 $user = new User;

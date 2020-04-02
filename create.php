@@ -1,5 +1,5 @@
 <?php 
-include 'core/init.php';
+include $_SERVER['DOCUMENT_ROOT'] . '/projects/BabbelHoek/core/init.php';
 // table: topics(id, cat_id, gebruikers_id, titel, inhoud, laatste_login, gemaakt_op)
 if ( isset( $_POST['do_create'])){
     // create validator object

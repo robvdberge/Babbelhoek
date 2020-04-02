@@ -1,4 +1,4 @@
-<?php include 'includes/header.php';?>
+<?php include BASE_URI . 'templates/includes/header.php';?>
 <ul id="topics">
         <?php 
             if ( $topics ):
@@ -35,4 +35,4 @@
         <li>Totaal aantal Categorieën: <strong><?php echo $totalCats;?></strong></li>
     </ul>
 
-<?php include 'includes/footer.php';?>
+<?php include BASE_URI . 'templates/includes/footer.php';?>

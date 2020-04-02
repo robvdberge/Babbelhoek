@@ -22,7 +22,7 @@
 								<label>Wachtwoord</label>
 								<input name="password" type="password" class="form-control" placeholder="Wachtwoord">
 							</div>			
-							<button name="do_login" type="submit" class="btn btn-secondary">Login</button> <a  class="btn btn-default" href="register.html">Maak Account</a>
+							<button name="do_login" type="submit" class="btn btn-secondary">Login</button> <a  class="btn btn-default" href="register.php">Maak Account</a>
 						</form>
 					<?php endif; ?>
                 </div>
